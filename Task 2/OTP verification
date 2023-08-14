@@ -1,0 +1,31 @@
+import random
+
+def generate_otp():
+    digits = "0123456789"
+    otp = ""
+    for i in range(6):
+        otp += random.choice(digits)
+    return otp
+
+def send_otp_to_user(otp):
+    # This function simulates sending the OTP to the user through email, SMS, etc.
+    print(f"Your OTP is: {otp}")
+
+def verify_otp(otp_entered, otp_generated):
+    return otp_entered == otp_generated
+
+if __name__ == "__main__":
+    user_phone_number = input()
+    
+    # Generate and send the OTP
+    generated_otp = generate_otp()
+    send_otp_to_user(generated_otp)
+    
+    # Simulate the user entering the OTP
+    user_entered_otp = input()
+    
+    # Verify the OTP
+    if verify_otp(user_entered_otp, generated_otp):
+        print("OTP Verification successful!")
+    else:
+        print("OTP Verification failed. Please try again.")
