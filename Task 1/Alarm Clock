@@ -1,0 +1,15 @@
+import datetime
+
+hour_input = int(input("enter Hour: "))
+min_input = int(input("Enter Minutes: "))
+am_pm_input = input("am / pm: ")
+
+
+
+if am_pm_input == "pm":
+    hour_input += 12
+
+while True:
+    if hour_input == datetime.datetime.now().hour and min_input == datetime.datetime.now().minute :
+        print("Times up... wake Up")
+        break
